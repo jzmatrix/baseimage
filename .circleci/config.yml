@@ -24,14 +24,14 @@ jobs:
           command: |
             date +%Y%m%d_%H%M > /tmp/timestamp
             TS=`cat /tmp/timestamp`
-            echo $TS
             ##
             U="_"
             BRANCH="$CIRCLE_BRANCH$U$TS"
+            ##
             echo $CIRCLE_BRANCH
             echo $BRANCH
             ##
-            docker build -t -t ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH -t ${IMAGE_REPO}/${IMAGE_NAME}:$BRANCH .
+            docker build -t ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH -t ${IMAGE_REPO}/${IMAGE_NAME}:$BRANCH .
             ##
             docker push ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH
             docker push ${IMAGE_REPO}/${IMAGE_NAME}:$BRANCH
