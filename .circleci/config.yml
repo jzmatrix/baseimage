@@ -27,7 +27,7 @@ jobs:
             echo $TS
             ##
             U='_'
-            BRANCH=$CIRCLE_BRANCH . $U . $TS
+            BRANCH=$CIRCLE_BRANCH + $U + $TS
             echo $CIRCLE_BRANCH
             echo $BRANCH
             ##
