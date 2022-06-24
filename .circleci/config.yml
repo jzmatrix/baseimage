@@ -26,9 +26,10 @@ jobs:
             TS=`cat /tmp/timestamp`
             echo $TS
             ##
+            BRANCH=$CIRCLE_BRANCH . "_" . $TS
             U='_'
             ##
-            docker build -t -t ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH -t ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH$U$TS .
+            docker build -t -t ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH -t ${IMAGE_REPO}/${IMAGE_NAME}:$BRANCH .
             ##
             docker push ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH
-            docker push ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH$U$TS
+            docker push ${IMAGE_REPO}/${IMAGE_NAME}:$BRANCH
