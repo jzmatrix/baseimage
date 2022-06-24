@@ -25,7 +25,7 @@ jobs:
             TS=`cat /tmp/timestamp`
             echo $TS
             ##
-            docker build --cache-from=app  -t ${IMAGE_REPO}/${IMAGE_NAME}:$TS -t ${IMAGE_REPO}/${IMAGE_NAME}:latest -t ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH.
+            docker build --cache-from=app -t ${IMAGE_REPO}/${IMAGE_NAME}:$TS -t ${IMAGE_REPO}/${IMAGE_NAME}:latest -t ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH
             ##
             docker push ${IMAGE_REPO}/${IMAGE_NAME}:$TS
             docker push ${IMAGE_REPO}/${IMAGE_NAME}:$CIRCLE_BRANCH
