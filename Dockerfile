@@ -38,12 +38,5 @@ RUN chmod 644 /etc/php/7.4/apache2/php.ini && \
     a2enmod status && \
     chmod -v +x /run-httpd.sh && \
     chmod 755 /opt/startServices.sh
-    #ln -f -s /etc/apache2/mods-available/info.conf /etc/apache2/mods-enabled/ && \
-    #ln -f -s /etc/apache2/mods-available/info.load /etc/apache2/mods-enabled/ && \
-    #ln -f -s /etc/apache2/mods-available/remoteip.load /etc/apache2/mods-enabled/ && \
-    #ln -f -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ && \
-    #ln -f -s /etc/apache2/mods-available/status.conf /etc/apache2/mods-enabled/ && \
-    #ln -f -s /etc/apache2/mods-available/status.load /etc/apache2/mods-enabled/ && \
-    
 ################################################################################
 CMD [ "/opt/startServices.sh" ]
